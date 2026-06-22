@@ -1,0 +1,25 @@
+//PEGANDO ELEMENTOS DO DOM
+const formPessoa = document.querySelector('#form-pessoa')
+const divLista = document.querySelector('#div-lista-pessoas')
+
+//CRIANDO ARRAY pessoas
+const pessoas = []
+
+
+//CAPTURAR O EVENTO submit DO FORMULÁRIO
+formPessoa.addEventListener('submit', (evt) => {
+    //INTERROMPER O EFEITO PADRÃO DE SUBMETER OOS DADOS DO FORMULÁRIO
+    evt.preventDefault()
+
+    //CRIAR UM OBJETO FORMULÁRIO 
+    const dadosFormPessoa = new FormData(formPessoa)
+
+    //CRIAR UM OBJETO LITERAL 
+    const pessoa = {
+        nome: dadosFormPessoa.get('nome'),
+        idade: dadosFormPessoa.get('idade'),
+        renda: dadosFormPessoa.get('renda')
+    }
+
+})
+
